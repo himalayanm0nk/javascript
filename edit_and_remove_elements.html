@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahi Aur Code || DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // func to add languages
+    // sara tree traverse krna hota taki end me jaake daal ske
+    function addLanguage(langName){
+        const li =document.createElement('li')
+         li.innerHTML=`${langName}`
+         document.querySelector('.language').appendChild(li)
+            
+    }
+    addLanguage('python')
+    addLanguage('TypeScript')
+
+    //Optimal LangUage
+    function addOptiLang(langName){
+        const li = document.createElement('li')
+        const addText =document.createTextNode(langName)
+        li.appendChild(addText)
+        document.querySelector('.language').appendChild(li)
+
+}
+addOptiLang('golang')
+//Edit Values
+//Brute way
+const SecLang =document.querySelector('li:nth-child(2)')
+// SecLang.innerHTML="mojo"
+const newLi= document.createElement('li')
+newLi.textContent="mojo"
+SecLang.replaceWith(newLi)
+
+
+const FirstLang =document.querySelector('li:first-child')
+FirstLang.outerHTML='<li>TypeScript<li>'
+
+
+//REMOVE
+const lastLang =document.querySelector('li:last-child')
+lastLang.remove()
+
+
+</script>
+</html>
